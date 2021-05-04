@@ -1,0 +1,374 @@
+//variables
+// ### Primary
+
+$Pink: hsl(322, 100%, 66%);
+$Light-Pink: hsl(321, 100%, 78%);
+$Light-Red: hsl(0, 100%, 63%);
+
+$White:hsl(0, 0%, 100%);
+$Black:hsl(0, 0%, 0%);
+// ### Neutral
+
+$Very-Dark-Cyan: hsl(192, 100%, 9%);
+$Very-Pale-Blue: hsl(210, 100%, 81%);
+
+// ## Typography
+$Header-Text: 'Poppins',
+sans-serif;
+
+$Sub-Header-Text: 'Open Sans',
+sans-serif;
+// font-family: 'Open Sans',
+//     sans-serif;
+
+//universal style
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+//main style section
+
+
+//media queries
+:root {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Poppins',
+        sans-serif;
+
+    margin: auto;
+    font-size: 1rem;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat((9, auto));
+    grid-template-areas:
+        "header"
+        "heroTitle"
+        "heroImage"
+        "heroMeta"
+        "detail1"
+        "detail2"
+        "detail3"
+        "readyToBuild"
+        "footer";
+
+    scroll-behavior: smooth;
+}
+
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+.button {
+    width: 25rem;
+    min-height: 5.2rem;
+    background-color: $Pink;
+    color: $White;
+    border-radius: 2.9rem;
+    border: none;
+    font-size: 1.4rem;
+    box-shadow: 0px 5px 7.5px hsla(0, 0%, 0%, 0.25);
+    cursor: pointer;
+
+    transition: all .4s ease;
+
+    &:hover {
+        background-color: $Light-Pink;
+    }
+}
+
+.para {
+    font-family: 'Open Sans',
+        sans-serif;
+}
+
+
+header {
+    width: 90vw;
+    margin: auto;
+    grid-area: header;
+    padding-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &>img {
+        height: 3.5rem;
+    }
+
+    &>button {
+        background-color: $White;
+        color: $Light-Pink;
+        border: .5px $Light-Pink;
+        box-shadow: 0 0 10px $Light-Pink;
+        height: 3.5rem;
+        width: 11rem;
+        border-radius: 2rem;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+}
+
+.heroTitle {
+    grid-area: heroTitle;
+    height: 40rem;
+    width: 80vw;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 13rem;
+    justify-content: space-between;
+
+    &>p {
+        width: 47%;
+        font-size: 1.5rem;
+        padding: 1.5rem 0;
+    }
+}
+
+.heroImage {
+    grid-area: heroImage;
+    height: 900px;
+    display: flex;
+    justify-content: center;
+    padding-top: 8rem;
+}
+
+.heroMeta {
+    height: 18rem;
+    grid-area: heroMeta;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+
+    .meta {
+        display: flex;
+        flex-direction: column;
+
+        &>div>img {
+            height: 2rem;
+            width: auto;
+        }
+
+        &>span:first-of-type {
+            font-size: 4rem;
+        }
+
+        &>span:last-of-type {
+            opacity: .5;
+            text-align: center;
+        }
+    }
+}
+
+.detail1 {
+    grid-area: detail1;
+}
+
+.detail3 {
+    grid-area: detail3;
+}
+
+.detail1,
+.detail3 {
+
+
+    &>div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 5.5rem 12.5rem;
+        background-color: #F6FBFF;
+
+        &>div {
+            width: 80%;
+            margin-right: auto;
+            grid-column: 1/2;
+            place-self: center;
+
+            &>h2 {
+                margin-bottom: 2rem;
+            }
+
+            &>p {
+                font-size: 1.2rem;
+            }
+        }
+
+        &>img {
+            width: 100%;
+            grid-column: 2/3;
+        }
+    }
+
+    &>img {
+        width: 100%;
+        display: block;
+    }
+
+}
+
+.detail2 {
+    grid-area: detail2;
+
+    &>div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 5.5rem 12.5rem;
+
+        &>div {
+            width: 80%;
+            margin-left: auto;
+            grid-column: 2/3;
+            place-self: center;
+
+            &>h2 {
+                margin-bottom: 2rem;
+            }
+
+            &>p {
+                font-size: 1.2rem;
+            }
+        }
+
+        &>img {
+            width: 100%;
+            grid-column: 1/2;
+        }
+    }
+
+}
+
+.readyToBuild {
+    grid-area: readyToBuild;
+    height: 42rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    row-gap: 2rem;
+}
+
+footer {
+    grid-area: footer;
+    color: $White;
+
+    &>img {
+        display: block;
+        width: 100%;
+    }
+
+    &>div {
+        height: 35rem;
+        padding: 9.25rem 9.75rem 1rem 9.75rem;
+        background-color: $Very-Dark-Cyan;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        column-gap: 1rem;
+
+        &>div {
+            display: flex;
+            flex-direction: column;
+            row-gap: .8rem;
+
+            &>img {
+                height: 3.75rem;
+                object-fit: contain;
+                margin-right: auto;
+            }
+
+            &>p {
+                width: 60%;
+                padding: 1rem 0;
+            }
+
+            &>span>img {
+                margin-right: 1rem;
+            }
+
+            &>main {
+                display: flex;
+
+                .brand {
+                    height: 2rem;
+                    object-fit: contain;
+                    margin: 3rem 1.5rem 0 0;
+                    color: $White;
+                    cursor: pointer;
+
+                    transition: all .4s ease;
+
+                    &:hover {
+                        color: $Very-Pale-Blue;
+                    }
+                }
+            }
+
+            &>div {
+                display: grid;
+                width: 100%;
+                grid-template-columns: 70% 30%;
+                height: 3.75rem;
+
+                &>input {
+                    width: 90%;
+                    grid-column: 1/2;
+                    border-radius: .3rem;
+                    border: none;
+                    cursor: pointer;
+                    font-size: 1.5rem;
+                    padding: 1rem;
+                }
+
+                &>button {
+                    grid-column: 2/3;
+                    background-color: $Pink;
+                    color: $White;
+                    border-radius: .3rem;
+                    border: none;
+                    font-size: 1.4rem;
+                    cursor: pointer;
+
+                    transition: all .4s ease;
+
+                    &:hover {
+                        background-color: $Light-Pink;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+
+.attribution {
+    display: block;
+    font-size: .75rem;
+    text-align: center;
+    background-color: $Very-Dark-Cyan;
+    padding-bottom: 1rem;
+    letter-spacing: .5px;
+}
+
+.attribution a {
+    font-size: .85rem;
+    color: $Light-Pink;
+}
